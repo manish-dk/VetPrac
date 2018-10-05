@@ -11,4 +11,5 @@ import com.example.vetprac.model.Pet;
 @Repository
 public interface PetRepository extends JpaRepository<Pet, Long> {
 	Page<Pet> findByPersonId(Long personId, Pageable pageable);
+	Page<Pet> findByInjuryId(Long injuryId, Pageable pageable);
 }

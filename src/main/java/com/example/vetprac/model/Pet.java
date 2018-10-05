@@ -37,6 +37,20 @@ public class Pet {
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JsonIgnore
 	private MySpringBootDataModel person;
+	
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "personId", nullable = false)
+	@OnDelete(action = OnDeleteAction.CASCADE)
+	@JsonIgnore
+	private Injury injury;
+
+	public Injury getInjury() {
+		return injury;
+	}
+
+	public void setInjury(Injury injury) {
+		this.injury = injury;
+	}
 
 	public long getId() {
 		return id;
